@@ -352,8 +352,8 @@ nav a[aria-current=page]:after { background: var(--accent); }
 }
 .article h1, .article h2 { color: var(--paper-ink); }
 .article h1 { font-family: var(--serif); font-weight: 500; }
-.article p, .article li { color: #cedbd9; }
-.article .lead { color: #52686b; border-color: #233b40; }
+.article p, .article li, .article blockquote { color: var(--paper-ink); }
+.article .lead { color: var(--paper-ink); border-color: #233b40; }
 .article .meta { color: #52686b; }
 .article .meta .category, .article .breadcrumb, .article .breadcrumb a,
 .article .sources a, .article .back, .article .read { color: #946b32; }
@@ -365,7 +365,7 @@ nav a[aria-current=page]:after { background: var(--accent); }
 .article ul, .article ol { padding-left: 24px; }
 .article li { margin: 8px 0; }
 .article .formula { margin: 20px 0; padding: 16px 20px; overflow-x: auto; font: 17px/1.6 var(--serif); }
-.article .scope-note { margin: 24px 0; padding-left: 18px; border-left: 3px solid #946b32; color: #52686b; }
+.article .scope-note { margin: 24px 0; padding-left: 18px; border-left: 3px solid #946b32; color: var(--paper-ink); }
 .article .quick-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 38px; }
 .article .quick-nav a { padding: 7px 10px; color: #946b32; background: #233b40; border: 1px solid #52686b; font-size: 12px; }
 footer { color: #52686b; background: #ffffff; border-color: var(--line); }
