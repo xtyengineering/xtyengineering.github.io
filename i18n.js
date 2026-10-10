@@ -161,7 +161,7 @@
     ["专业会员（MIMMM） · 英国材料、矿物和采矿学会（IOM3）", "Professional Member (MIMMM) · Institute of Materials, Minerals and Mining"],
     ["执行委员 · 香港建造金属结构协会", "Executive Member · Hong Kong Constructional Metal Structures Association"],
     ["TWI 专业委员会", "TWI Professional Board"],
-    ["已获邀请于 2027 年 7 月 1 日起加入 TWI 专业委员会；正式任职尚待该委员会批准。", "I have been invited to join the TWI Professional Board from 1 July 2027; formal appointment remains subject to Board approval."],
+    ["已获邀请于 2027 年 7 月 1 日起加入 TWI 专业委员会。", "Invited to join the TWI Professional Board from 1 July 2027."],
     ["主要研究方向", "Research interests"],
     ["S690/S960 高强钢焊接；焊接热循环与热影响区组织性能；显微组织与力学性能的关系；焊接工艺评定及质量控制。", "S690/S960 high-strength steel welding; welding thermal cycles and heat-affected-zone behaviour; microstructure–property relationships; welding procedure qualification and quality assurance."],
     ["电弧能量与热输入：定义、效率系数和单位", "Arc Energy and Heat Input: Definitions, Efficiency and Units"],
@@ -273,7 +273,7 @@
     ["执行委员", "Executive Member"],
     ["特许工程师（CEng）；英国焊接学会专业会员（MWeldI）、英国材料、矿物和采矿学会专业会员（MIMMM）；香港建造金属结构协会执行委员。", "Chartered Engineer (CEng); Professional Member of The Welding Institute (MWeldI) and the Institute of Materials, Minerals and Mining (MIMMM); Executive Member of the Hong Kong Constructional Metal Structures Association."],
     ["研究方向：S690/S960 焊接、焊接热循环与热影响区行为、显微组织与性能关系、焊接工艺评定及质量保证。", "Research interests: S690/S960 welding, welding thermal cycles and heat-affected-zone behaviour, microstructure–property relationships, procedure qualification and quality assurance."],
-    ["已获邀请于 2027 年 7 月 1 日起加入 TWI 专业委员会，尚待委员会批准。", "Invited to join the TWI Professional Board from 1 July 2027, subject to Board approval."],
+    ["已获邀请于 2027 年 7 月 1 日起加入 TWI 专业委员会。", "Invited to join the TWI Professional Board from 1 July 2027."],
     ["了解更多我的工作", "More about my work"],
     ["焊接、材料，以及它们所成就的结构。", "Welding, materials & the structures they make possible."],
 
