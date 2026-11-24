@@ -126,10 +126,12 @@
   const form = document.querySelector("#kb-form");
   const input = document.querySelector("#kb-query");
   const result = document.querySelector("#kb-result");
+  const submit = form.querySelector("button[type=submit]");
+  const endpoint = "https://xty-welding-rag.xiaoty89757.workers.dev/search";
   const isZh = () => document.documentElement.lang.startsWith("zh");
   const escapeHtml = value => value.replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
 
-  const render = query => {
+  const renderLocal = query => {
     const topic = retrieve(query);
     const zh = isZh();
     if (!topic) {
@@ -147,18 +149,53 @@
     </article>`;
   };
 
+  const renderAI = matches => {
+    const zh = isZh();
+    const [match, ...related] = matches;
+    if (!match) return renderLocal(input.value);
+    const language = zh ? "zh" : "en";
+    result.innerHTML = `<article class="kb-answer">
+      <div class="kb-answer-label">${zh ? "AI 向量检索·最相关知识块" : "AI vector search · top knowledge chunk"}</div>
+      <h2>${escapeHtml(match.title[language])}</h2>
+      <p class="kb-answer-main">${escapeHtml(match.text[language])}</p>
+      <p class="kb-scope"><strong>${zh ? "适用边界：" : "Scope: "}</strong>${escapeHtml(match.scope[language])}</p>
+      <div class="kb-sources"><strong>${zh ? `语义相似度：${match.score}` : `Semantic similarity: ${match.score}`}</strong><a href="${match.source.url}">${escapeHtml(match.source.section)} <span>↗</span></a></div>
+      ${related.length ? `<div class="kb-related"><strong>${zh ? "其他相关结果" : "Other related results"}</strong>${related.map(item => `<a href="${item.source.url}">${escapeHtml(item.title[language])} <span>${item.score}</span></a>`).join("")}</div>` : ""}
+    </article>`;
+  };
+
+  const render = async query => {
+    const zh = isZh();
+    submit.disabled = true;
+    result.innerHTML = `<div class="kb-empty"><h2>${zh ? "AI 正在理解问题…" : "AI is interpreting the question…"}</h2></div>`;
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query })
+      });
+      if (!response.ok) throw new Error(`Search failed: ${response.status}`);
+      renderAI((await response.json()).matches || []);
+    } catch (error) {
+      console.warn(error);
+      renderLocal(query);
+    } finally {
+      submit.disabled = false;
+    }
+  };
+
   form.addEventListener("submit", event => {
     event.preventDefault();
-    render(input.value);
+    void render(input.value);
   });
   document.querySelectorAll("[data-query-zh]").forEach(button => button.addEventListener("click", () => {
     input.value = button.dataset[isZh() ? "queryZh" : "queryEn"];
-    render(input.value);
+    void render(input.value);
   }));
   document.addEventListener("click", event => {
     if (!event.target.closest(".lang-switch [data-lang]")) return;
     input.placeholder = isZh() ? "例如：WPS和WPQR是什么关系？" : "For example: What is the relationship between a WPS and WPQR?";
-    if (input.value) render(input.value);
+    if (input.value) void render(input.value);
     document.title = isZh() ? "焊接AI知识库 · XIAO Tingyu" : "Welding AI Knowledge Base · XIAO Tingyu";
   });
   input.placeholder = isZh() ? "例如：WPS和WPQR是什么关系？" : "For example: What is the relationship between a WPS and WPQR?";

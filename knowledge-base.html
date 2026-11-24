@@ -14,13 +14,14 @@
     .kb-panel{padding:30px;border:1px solid var(--line);border-radius:14px;background:var(--paper);box-shadow:0 12px 38px rgba(35,59,64,.07)}.kb-panel label{display:block;margin-bottom:10px;font-weight:700}.kb-panel textarea{width:100%;min-height:112px;resize:vertical;padding:15px 16px;border:1px solid #b8c9c4;border-radius:9px;background:#fff;color:var(--ink);font:16px/1.55 inherit}.kb-panel textarea:focus{outline:3px solid #c7dcd7;outline-offset:2px;border-color:var(--steel)}.kb-actions{display:flex;gap:12px;align-items:center;margin-top:14px}.kb-submit{border:0;border-radius:8px;padding:11px 18px;background:var(--steel);color:#fff;font:700 14px inherit;cursor:pointer}.kb-submit:hover{background:#28585e}.kb-privacy{color:var(--muted);font-size:12px}
     .kb-examples{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0 0}.kb-example{padding:7px 11px;border:1px solid var(--line);border-radius:7px;background:var(--panel-2);color:var(--steel);font:600 12px inherit;cursor:pointer}.kb-example:hover{border-color:#8eaaa4}
     #kb-result{margin-top:24px}.kb-answer,.kb-empty{padding:28px 30px;border-left:4px solid var(--accent);background:var(--paper);border-radius:0 12px 12px 0;box-shadow:0 8px 28px rgba(35,59,64,.05)}.kb-answer-label{color:var(--accent);font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.kb-answer h2,.kb-empty h2{margin:8px 0 14px;font-size:27px}.kb-answer-main{font-size:17px;color:var(--ink)}.kb-answer li{margin:7px 0;color:var(--muted)}.kb-scope{margin:20px 0;padding:14px 16px;background:var(--panel-2);border-radius:8px;color:var(--muted);font-size:14px}.kb-sources{display:grid;gap:7px;padding-top:16px;border-top:1px solid var(--line);font-size:13px}.kb-sources a{color:var(--steel);text-decoration:underline;text-underline-offset:3px}.kb-sources a span{display:inline-block;margin-left:4px}
-    .kb-about{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}.kb-about section{padding:25px;border-top:2px solid var(--line)}.kb-about h2{font-size:20px}.kb-about p,.kb-about li{color:var(--muted);font-size:14px}.kb-about ol,.kb-about ul{padding-left:20px}.kb-topics{grid-column:1/-1}.kb-topic-list{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:14px}.kb-topic-list span{padding:11px;border-radius:7px;background:var(--panel-2);font-size:12px;color:var(--steel)}
+    .kb-related{display:grid;gap:7px;margin-top:18px;font-size:13px}.kb-related a{display:flex;justify-content:space-between;gap:16px;color:var(--steel)}.kb-submit:disabled{cursor:wait;opacity:.65}
+    .kb-about{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}.kb-about section{padding:25px;border-top:2px solid var(--line)}.kb-about h2{font-size:20px}.kb-about p,.kb-about li{color:var(--muted);font-size:14px}.kb-about ol,.kb-about ul{padding-left:20px}.kb-topics{grid-column:1/-1}.kb-topic-list{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}.kb-topic-list span{padding:11px;border-radius:7px;background:var(--panel-2);font-size:12px;color:var(--steel)}
     @media(max-width:650px){.kb-page{padding-top:34px}.kb-panel{padding:22px 18px}.kb-actions{align-items:flex-start;flex-direction:column}.kb-answer,.kb-empty{padding:23px 20px}.kb-about{grid-template-columns:1fr}.kb-topics{grid-column:auto}.kb-topic-list{grid-template-columns:1fr 1fr}}
   </style>
   <script>document.documentElement.classList.add("i18n-loading")</script>
   <script src="blog-nav.js?v=20260929-2" defer></script>
   <script src="i18n.js?v=20261124-2" defer></script>
-  <script src="knowledge-base.js?v=20261124-1" defer></script>
+  <script src="knowledge-base.js?v=20261125-1" defer></script>
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
@@ -28,17 +29,17 @@
 
   <main id="main" class="wrap kb-page">
     <section class="kb-hero">
-      <div class="eyebrow">LOCAL RETRIEVAL · EVIDENCE-LINKED</div>
+      <div class="eyebrow">AI VECTOR RETRIEVAL · EVIDENCE-LINKED</div>
       <h1><span data-l="en">Welding AI Knowledge Base</span><span data-l="zh">焊接AI知识库</span></h1>
       <p><span data-l="en">Ask a welding question. This small prototype retrieves the closest reviewed knowledge card and returns a concise answer with its scope and sources.</span><span data-l="zh">输入一个焊接问题。这个小型体验版会检索最相关的已核对知识卡，并返回简明答案、适用边界和来源。</span></p>
-      <div class="kb-cost"><span><span data-l="en">Hosting cost: HK$0</span><span data-l="zh">托管成本：HK$0</span></span><span><span data-l="en">No API key</span><span data-l="zh">无需API密钥</span></span><span><span data-l="en">No data upload</span><span data-l="zh">不上传问题数据</span></span></div>
+      <div class="kb-cost"><span><span data-l="en">Current cost: HK$0</span><span data-l="zh">当前成本：HK$0</span></span><span><span data-l="en">No browser API key</span><span data-l="zh">浏览器无需API密钥</span></span><span><span data-l="en">Cloudflare Workers AI</span><span data-l="zh">Cloudflare Workers AI</span></span></div>
     </section>
 
     <section class="kb-panel" aria-labelledby="kb-label">
       <form id="kb-form">
         <label id="kb-label" for="kb-query"><span data-l="en">What would you like to check?</span><span data-l="zh">你想查询什么？</span></label>
         <textarea id="kb-query" required minlength="2"></textarea>
-        <div class="kb-actions"><button class="kb-submit" type="submit"><span data-l="en">Search knowledge base</span><span data-l="zh">检索知识库</span></button><span class="kb-privacy"><span data-l="en">The query stays in this browser.</span><span data-l="zh">查询内容只在当前浏览器中处理。</span></span></div>
+        <div class="kb-actions"><button class="kb-submit" type="submit"><span data-l="en">AI semantic search</span><span data-l="zh">AI语义检索</span></button><span class="kb-privacy"><span data-l="en">The question is sent to Cloudflare Workers AI for vectorisation.</span><span data-l="zh">问题会发送到 Cloudflare Workers AI 进行向量化。</span></span></div>
       </form>
       <div class="kb-examples" aria-label="Example questions">
         <button class="kb-example" type="button" data-query-zh="热输入和电弧能量有什么区别？" data-query-en="What is the difference between heat input and arc energy?"><span data-l="en">Heat input vs arc energy</span><span data-l="zh">热输入与电弧能量</span></button>
@@ -52,9 +53,9 @@
     </section>
 
     <div class="kb-about">
-      <section><h2><span data-l="en">How it works</span><span data-l="zh">运行方式</span></h2><ol><li><span data-l="en">Normalise the question locally.</span><span data-l="zh">在浏览器本地整理问题。</span></li><li><span data-l="en">Match it to reviewed welding concepts.</span><span data-l="zh">匹配已核对的焊接主题。</span></li><li><span data-l="en">Return the answer, limits and sources.</span><span data-l="zh">返回答案、边界和来源。</span></li></ol></section>
+      <section><h2><span data-l="en">How it works</span><span data-l="zh">运行方式</span></h2><ol><li><span data-l="en">BGE-M3 converts the question and reviewed chunks into vectors.</span><span data-l="zh">BGE-M3 把问题和已核对知识块转换为向量。</span></li><li><span data-l="en">Cosine similarity ranks meaning rather than exact keywords.</span><span data-l="zh">余弦相似度按语义而非原样关键词排序。</span></li><li><span data-l="en">The page returns the best evidence, scope and source.</span><span data-l="zh">页面返回最相关证据、边界和来源。</span></li></ol></section>
       <section><h2><span data-l="en">What it does not do</span><span data-l="zh">它不会做什么</span></h2><p><span data-l="en">This is a retrieval prototype, not an approval system. It does not approve a WPS, select project parameters or replace the governing standard and Responsible Engineer.</span><span data-l="zh">这是检索体验版，不是审批系统。它不能批准WPS、替项目选择参数，也不能替代适用标准和负责工程师。</span></p></section>
-      <section class="kb-topics"><h2><span data-l="en">Current knowledge scope</span><span data-l="zh">当前知识范围</span></h2><div class="kb-topic-list"><span>Heat input / 热输入</span><span>WPS &amp; WPQR</span><span>S960</span><span>Hong Kong NDT / 香港检测</span><span>Hardness / 硬度</span></div></section>
+      <section class="kb-topics"><h2><span data-l="en">Current vector knowledge scope</span><span data-l="zh">当前向量知识范围</span></h2><div class="kb-topic-list"><span>Heat input / 热输入</span><span>WPS &amp; WPQR</span><span>Hong Kong NDT / 香港检测</span></div></section>
     </div>
   </main>
 
