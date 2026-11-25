@@ -1,7 +1,8 @@
-import { readFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 
 const corpus = JSON.parse(readFileSync(new URL("./corpus.json", import.meta.url)));
 const sql = value => `'${String(value).replaceAll("'", "''")}'`;
+const statements = [];
 
 for (const chunk of corpus) {
   const values = [
@@ -17,7 +18,7 @@ for (const chunk of corpus) {
     chunk.source.section,
     JSON.stringify(chunk.standards)
   ].map(sql).join(", ");
-  console.log(`INSERT INTO chunks (
+  statements.push(`INSERT INTO chunks (
     id, title_zh, title_en, text_zh, text_en, scope_zh, scope_en,
     source_page, source_url, source_section, standards_json
   ) VALUES (${values}) ON CONFLICT(id) DO UPDATE SET
@@ -28,3 +29,7 @@ for (const chunk of corpus) {
     source_section=excluded.source_section, standards_json=excluded.standards_json,
     updated_at=CURRENT_TIMESTAMP;`);
 }
+
+const output = `${statements.join("\n")}\n`;
+if (process.argv[2]) writeFileSync(process.argv[2], output);
+else process.stdout.write(output);

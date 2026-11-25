@@ -1,170 +1,170 @@
 [
   {
-    "id": "heat-input-formula",
-    "title": {
-      "zh": "电弧能量的公式与单位",
-      "en": "Arc-energy equation and units"
-    },
-    "text": {
-      "zh": "电弧能量是由电弧电参数计算的单位焊缝长度能量。当电压 U 以 V、电流 I 以 A、焊接速度 v 以 mm/min 表示时，Arc energy = 60 × U × I / (1000 × v) kJ/mm。若 v 以 mm/s 表示，公式中不使用系数 60。计算结果应注明速度单位以及是否计入效率系数 η。",
-      "en": "Arc energy is the energy per unit weld length calculated from the electrical arc parameters. When voltage U is in V, current I is in A and travel speed v is in mm/min, Arc energy = 60 × U × I / (1000 × v) kJ/mm. When v is in mm/s, the factor 60 is omitted. Every result should state the travel-speed unit and whether the efficiency factor η has been applied."
-    },
-    "source": {
-      "page": "heat-input.html",
-      "url": "https://xtyengineering.github.io/heat-input.html",
-      "section": "计算式与单位 / Equations and units"
-    },
-    "standards": ["BS EN 1011-1:2009"],
-    "scope": {
-      "zh": "项目应采用合同指定的计算定义和单位。",
-      "en": "Use the calculation definition and units specified by the contract."
-    }
+    "id": "iso14731-purpose-and-scope",
+    "title": {"zh": "ISO 14731解决什么问题？", "en": "What does ISO 14731 address?"},
+    "text": {"zh": "ISO 14731识别焊接协调中与焊接质量有关的基本任务和责任。其核心原则是：承担某项协调任务的人员，应能证明自己具备完成该任务的能力。它不是具体产品的焊接工艺规范，也不直接给出接头参数或验收数值。", "en": "ISO 14731 identifies the essential welding-quality tasks and responsibilities within welding coordination. Its central principle is that personnel assigned a coordination task must be able to demonstrate competence for that task. It is not a product-specific welding procedure code and does not itself prescribe joint parameters or acceptance values."},
+    "source": {"page": "BS EN ISO 14731:2019", "url": "https://www.iso.org/standard/68893.html", "section": "Clause 1"},
+    "standards": ["BS EN ISO 14731:2019, Clause 1"],
+    "scope": {"zh": "适用于焊接协调任务与责任；具体产品标准、法规和合同可提出附加要求。", "en": "Applies to welding-coordination tasks and responsibilities; product standards, regulations and contracts may add requirements."}
   },
   {
-    "id": "heat-input-efficiency",
-    "title": {
-      "zh": "效率系数与跨规范命名",
-      "en": "Efficiency factor and cross-code terminology"
-    },
-    "text": {
-      "zh": "当适用定义要求计入焊接方法的热效率系数 η 时，Heat input = η × Arc energy。在常规 WPS/WPQR 计算中，η 通常是适用标准给出的约定值，不是焊机电源效率。EN 体系常区分电弧能量和计入 η 后的热输入；AWS 文件常把未乘 η 的结果称为 heat input。没有合同依据时，不应自行再乘 0.8。",
-      "en": "Where the adopted definition requires the process thermal-efficiency factor η, Heat input = η × Arc energy. In routine WPS/WPQR calculations, η is normally a conventional value specified by the applicable standard, not power-source efficiency. EN practice commonly distinguishes arc energy from heat input after η is applied, while AWS documents commonly call the value before η is applied heat input. Do not multiply by 0.8 again without a contractual basis."
-    },
-    "source": {
-      "page": "heat-input.html",
-      "url": "https://xtyengineering.github.io/heat-input.html",
-      "section": "效率系数 η / Efficiency factor η"
-    },
-    "standards": ["BS EN 1011-1:2009", "ISO/TS 8182:2026"],
-    "scope": {
-      "zh": "先确认合同采用的规范体系；特殊工艺应采用获批的计算边界。",
-      "en": "Identify the contract code system first; special processes require an approved calculation boundary."
-    }
+    "id": "iso14731-manufacturer-responsibility",
+    "title": {"zh": "焊接协调最终由谁负责？", "en": "Who retains responsibility for welding coordination?"},
+    "text": {"zh": "焊接协调由制造商承担最终责任。制造商应确定需要哪些协调任务、所需能力水平，并至少指定一人负责焊接协调任务。指定协调人员并不把制造商的责任转移给个人。", "en": "The manufacturer retains responsibility for welding coordination. The manufacturer determines the required tasks and competence levels and appoints at least one person to be responsible for welding-coordination tasks. Appointing personnel does not transfer the manufacturer's responsibility to those individuals."},
+    "source": {"page": "BS EN ISO 14731:2019", "url": "https://www.iso.org/standard/68893.html", "section": "Clause 4.2"},
+    "standards": ["BS EN ISO 14731:2019, Clause 4.2"],
+    "scope": {"zh": "这里的制造商是实施焊接及相关活动、并对焊接生产负责的实体。", "en": "Here, manufacturer means the entity carrying out welding and related activities and remaining responsible for welding production."}
   },
   {
-    "id": "wps-document-roles",
-    "title": {
-      "zh": "pWPS、WPQR/PQR 与 WPS 的作用",
-      "en": "Roles of pWPS, WPQR/PQR and WPS"
-    },
-    "text": {
-      "zh": "ISO 工艺评定试验路线为：pWPS → 工艺评定试件焊接 → 检验与试验 → WPQR → 生产用 WPS。pWPS 用于指导评定试件施焊；WPQR/PQR 记录实际试验条件、检验和试验结果及评定范围；WPS 是受控的生产焊接工艺指令。",
-      "en": "Under the ISO procedure-test route, the sequence is pWPS → qualification test weld → examination and testing → WPQR → production WPS. The pWPS instructs production of the qualification test weld; the WPQR/PQR records the actual test conditions, examination and test results, and qualification range; the WPS is the controlled instruction for production welding."
-    },
-    "source": {
-      "page": "wps-pqr.html",
-      "url": "https://xtyengineering.github.io/wps-pqr.html",
-      "section": "Function of each document"
-    },
-    "standards": ["ISO 15609-1:2019", "ISO 15614-1:2017+A1:2019"],
-    "scope": {
-      "zh": "ISO 与 AWS 的术语和评定路线不能自动互换。",
-      "en": "ISO and AWS terminology and qualification routes are not automatically interchangeable."
-    }
+    "id": "iso14731-team-allocation",
+    "title": {"zh": "焊接协调能否由多人共同承担？", "en": "Can welding coordination be shared by several people?"},
+    "text": {"zh": "可以。焊接协调可分配给个人或团队，也可由不同人员承担不同任务。但每项任务、责任和授权范围必须清楚分配，并确认承担者对具体任务具备能力，避免出现责任空白或重复授权。", "en": "Yes. Welding coordination may be assigned to an individual or a team, and different people may perform different tasks. Each task, responsibility and extent of authorization must be clearly allocated, and each assignee must be competent for the specific task."},
+    "source": {"page": "BS EN ISO 14731:2019", "url": "https://www.iso.org/standard/68893.html", "section": "Clauses 3.2, 3.3 and 4.2"},
+    "standards": ["BS EN ISO 14731:2019, Clauses 3.2, 3.3 and 4.2"],
+    "scope": {"zh": "人员数量不是合规证据，关键是任务分配、能力和授权均有记录。", "en": "Headcount is not evidence of conformity; documented allocation, competence and authorization are decisive."}
   },
   {
-    "id": "wpqr-actual-values",
-    "title": {
-      "zh": "评定记录的实际值与 WPS 的允许范围",
-      "en": "Actual qualification values and permitted WPS ranges"
-    },
-    "text": {
-      "zh": "评定记录必须注明试件焊接时实际采用的数值。如实测电流为 245 A，仅记录 200–300 A 的设备宽泛范围不能描述该试验。只有在适用评定规则支持且技术上适合生产接头时，生产用 WPS 才能规定相应范围。",
-      "en": "A qualification record must state the values actually used for the test weld. If the measured current was 245 A, a broad machine range such as 200–300 A does not describe the test. A production WPS can contain a range only where that range is supported by the governing qualification rules and remains technically suitable for the production joint."
-    },
-    "source": {
-      "page": "wps-pqr.html",
-      "url": "https://xtyengineering.github.io/wps-pqr.html",
-      "section": "Actual values and permitted ranges"
-    },
-    "standards": ["ISO 15614-1:2017+A1:2019"],
-    "scope": {
-      "zh": "允许范围必须按合同指定的规范版本确定。",
-      "en": "Derive permitted ranges from the code edition specified by the contract."
-    }
+    "id": "iso14731-subcontracted-coordination",
+    "title": {"zh": "焊接协调可以外包吗？", "en": "Can welding coordination be subcontracted?"},
+    "text": {"zh": "可以外包，但应书面规定外包协调人员的任务、责任、现场访问和报告安排。外包不会转移制造商对符合ISO 14731的责任；制造商仍需确保外包服务足以覆盖实际焊接活动。", "en": "It may be subcontracted, but the tasks, responsibilities, site access and reporting arrangements should be documented. Subcontracting does not transfer the manufacturer's responsibility for conformity with ISO 14731, and the manufacturer must ensure the service covers the actual welding activities."},
+    "source": {"page": "BS EN ISO 14731:2019", "url": "https://www.iso.org/standard/68893.html", "section": "Clause 4.2"},
+    "standards": ["BS EN ISO 14731:2019, Clause 4.2"],
+    "scope": {"zh": "合同或应用标准可能对外部焊接协调人员提出更具体的在场或认可要求。", "en": "Contracts or application standards may impose more specific attendance or approval requirements on external coordinators."}
   },
   {
-    "id": "wps-production-coverage",
-    "title": {
-      "zh": "WPQR/PQR 对生产 WPS 的覆盖性核查",
-      "en": "Checking WPQR/PQR coverage of a production WPS"
-    },
-    "text": {
-      "zh": "仅有已签署的 WPQR/PQR 并不足够。应逐项核对生产 WPS 是否处于已评定的母材组别、产品形式、厚度、熔敷焊缝金属厚度、适用时的管径、接头形式、焊接方法、焊接位置、衬垫、焊材、热输入或电弧能量、预热、道间温度及焊后热处理范围内。",
-      "en": "A signed WPQR/PQR is not sufficient by itself. Check the production WPS against the qualified parent-material grouping, product form, thickness, deposited weld-metal thickness, pipe diameter where relevant, joint type, welding process, position, backing, consumables, heat-input or arc-energy controls, preheat, interpass temperature and post-weld heat treatment."
-    },
-    "source": {
-      "page": "wps-pqr.html",
-      "url": "https://xtyengineering.github.io/wps-pqr.html",
-      "section": "Applicability to the production weld"
-    },
-    "standards": ["ISO 15614-1:2017+A1:2019"],
-    "scope": {
-      "zh": "规范评定范围内仍需评估实际接头的工程适用性。",
-      "en": "Being inside the formal qualification range does not remove the need to assess engineering suitability."
-    }
+    "id": "iso14731-job-description",
+    "title": {"zh": "焊接协调人员的岗位说明应写什么？", "en": "What should a welding coordinator's job description contain?"},
+    "text": {"zh": "制造商应为所有焊接协调人员编制岗位说明，至少列明分配的任务、责任和授权范围。授权还应说明其组织位置，以及能否代表制造商签署或确认WPS、监督报告、技术文件或合同等文件。", "en": "The manufacturer should prepare job descriptions for all welding-coordination personnel, stating at least their assigned tasks, responsibilities and extent of authorization. Authorization should also cover their organizational position and whether they may sign or validate WPSs, supervision reports, technical documents or contracts on behalf of the manufacturer."},
+    "source": {"page": "BS EN ISO 14731:2019", "url": "https://www.iso.org/standard/68893.html", "section": "Clause 5"},
+    "standards": ["BS EN ISO 14731:2019, Clauses 5.1 to 5.3"],
+    "scope": {"zh": "签字权限应与实际任务和组织授权一致，不能仅凭职称推定。", "en": "Signature authority must match actual duties and organizational authorization; it cannot be inferred from a job title alone."}
   },
   {
-    "id": "hk-visual-inspection",
-    "title": {
-      "zh": "香港《钢结构规范》的焊缝目视检验",
-      "en": "Visual weld inspection under the Hong Kong Steel Code"
-    },
-    "text": {
-      "zh": "《钢结构规范》第 14.3.6.3 条要求在其他规定无损检测前，对所有焊缝全长进行目视检验。将变得不可接近的焊缝应在失去可达性前完成检验。目视检验检查尺寸、外形和可见表面缺欠，并确认表面是否适合后续检测。",
-      "en": "Clause 14.3.6.3 requires visual inspection over the full length of all welds before other required NDT. Welds that will become inaccessible are to be examined before access is lost. Visual inspection addresses dimensions, profile and visible surface imperfections and establishes whether the surface is suitable for supplementary testing."
-    },
-    "source": {
-      "page": "hong-kong-weld-inspection.html",
-      "url": "https://xtyengineering.github.io/hong-kong-weld-inspection.html",
-      "section": "Visual inspection"
-    },
-    "standards": ["Hong Kong Steel Code 2011 (2023 Edition), 14.3.6.3"],
-    "scope": {
-      "zh": "应同时确认项目图纸、技术规范和 ITP 的补充要求。",
-      "en": "Also confirm supplementary requirements in the project drawings, specification and ITP."
-    }
+    "id": "iso14731-competence-evidence",
+    "title": {"zh": "焊接协调员是否必须持有某一种证书？", "en": "Must a welding coordinator hold one specific certificate?"},
+    "text": {"zh": "ISO 14731强调对已分配任务的能力证明，并未用一种通用证书替代能力评价。能力可来自教育、培训和经验的组合，并应与产品复杂程度、材料、采用的标准和失效后果相匹配。法规、应用标准或合同仍可另行规定特定资格。", "en": "ISO 14731 requires demonstrated competence for assigned tasks rather than treating one universal certificate as a substitute for competence assessment. Competence may come from a combination of education, training and experience and should match product complexity, materials, governing standards and consequences of failure. Regulations, application standards or contracts may still require specific qualifications."},
+    "source": {"page": "BS EN ISO 14731:2019", "url": "https://www.iso.org/standard/68893.html", "section": "Clauses 1, 5.1, 6.1 and Annex A"},
+    "standards": ["BS EN ISO 14731:2019, Clauses 1, 5.1, 6.1 and Annex A"],
+    "scope": {"zh": "不能据此否定合同指定的IWE、IWT、IWS或其他资格要求。", "en": "This does not override contractual requirements for IWE, IWT, IWS or other named qualifications."}
   },
   {
-    "id": "hk-ndt-hold-time",
-    "title": {
-      "zh": "香港钢结构最终无损检测前的等待时间",
-      "en": "Hold time before final NDT under the Hong Kong Steel Code"
-    },
-    "text": {
-      "zh": "第 14.3.6.4 条规定，焊态构件最终检验前通常应至少等待 16 小时，表 14.2b 再根据 IIW 碳当量和组合厚度给出示例等待时间。对屈服强度高于 690 MPa 的材料，不应使用表 14.2b；负责工程师应根据焊接工程师或焊材供应商的意见提交等待时间。因此，不能把规范概括为统一等待 24 或 48 小时。",
-      "en": "Clause 14.3.6.4 states that at least 16 hours should generally be allowed before final inspection of as-welded fabrication, with Table 14.2b varying illustrative hold time by IIW carbon equivalent and combined thickness. For material above 690 MPa yield strength, Table 14.2b should not be used; the Responsible Engineer should submit the hold time based on advice from a welding engineer or consumable supplier. A universal 24- or 48-hour rule is therefore inaccurate."
-    },
-    "source": {
-      "page": "hong-kong-weld-inspection.html",
-      "url": "https://xtyengineering.github.io/hong-kong-weld-inspection.html",
-      "section": "Hold time before final NDT"
-    },
-    "standards": ["Hong Kong Steel Code 2011 (2023 Edition), 14.3.6.4 and Table 14.2b"],
-    "scope": {
-      "zh": "等待时间应由适用规范、材料、厚度、拘束和项目 ITP 确定并记录。",
-      "en": "Determine and record hold time from the applicable code, material, thickness, restraint and project ITP."
-    }
+    "id": "iso14731-competence-levels",
+    "title": {"zh": "综合、专项和基础能力等级如何区别？", "en": "How do comprehensive, specific and basic competence levels differ?"},
+    "text": {"zh": "综合级用于高度复杂、不可预测的情况，需要高度专业的问题解决能力，并能定义和修订相关人员任务；专项级用于复杂、不可预测的情况，要求能选择适当的技术和经济方案；基础级面向常见、较可预测的工作，能够处理基本问题并监督标准化活动。等级应根据生产复杂性选定，而不是按职位名称自动确定。", "en": "The comprehensive level addresses highly complex and unpredictable situations and requires highly specialized problem-solving plus the ability to define and revise personnel tasks. The specific level addresses complex and unpredictable work and requires selection of suitable technical and economic solutions. The basic level covers common, relatively predictable work and supervision of standard activities. The level is selected from production complexity, not automatically from job title."},
+    "source": {"page": "BS EN ISO 14731:2019", "url": "https://www.iso.org/standard/68893.html", "section": "Clause 6.2"},
+    "standards": ["BS EN ISO 14731:2019, Clauses 6.2.1 to 6.2.4"],
+    "scope": {"zh": "具体项目还应考虑产品关键性、质量要求和失效后果。", "en": "Product criticality, quality requirements and consequences of failure also need to be considered."}
   },
   {
-    "id": "hk-high-strength-ndt",
-    "title": {
-      "zh": "香港规范下高强钢焊缝的无损检测频率",
-      "en": "NDT frequency for high-strength steel under the Hong Kong Steel Code"
-    },
-    "text": {
-      "zh": "表 14.3a 按焊缝形式、方向和厚度规定强制无损检测。注 5 规定，对屈服强度大于 500 N/mm² 的钢材，除非负责工程师另行同意，检测频率应为 100%。任何降低检测比例的决定都应形成项目记录，并由适用条款和生产证据支持。",
-      "en": "Table 14.3a defines mandatory NDT by weld type, orientation and thickness. Note 5 states that, for steel with yield strength greater than 500 N/mm², the testing frequency should be 100% unless otherwise agreed by the Responsible Engineer. Any reduction should be a documented project decision supported by the applicable provision and production evidence."
-    },
-    "source": {
-      "page": "hong-kong-weld-inspection.html",
-      "url": "https://xtyengineering.github.io/hong-kong-weld-inspection.html",
-      "section": "NDT extent for high-strength steel"
-    },
-    "standards": ["Hong Kong Steel Code 2011 (2023 Edition), Table 14.3a Note 5"],
-    "scope": {
-      "zh": "具体检测方法、范围和验收准则仍应按合同和项目 ITP 确定。",
-      "en": "The contract and project ITP still define the method, extent and acceptance criteria."
-    }
+    "id": "iso14731-requirement-technical-review",
+    "title": {"zh": "焊接前的要求评审和技术评审要检查什么？", "en": "What should requirement and technical reviews check before welding?"},
+    "text": {"zh": "要求评审应确认适用的产品标准、补充要求以及制造商是否有能力满足要求。技术评审进一步检查母材和接头性能、焊缝位置、质量与验收要求、施工与检测可达性、焊接顺序、特殊焊接要求以及坡口和焊缝尺寸。", "en": "The requirement review checks the applicable product standard, supplementary requirements and the manufacturer's capability to comply. The technical review then addresses parent materials and joint properties, weld location, quality and acceptance requirements, access for fabrication and inspection, welding sequence, special welding requirements, and joint and weld dimensions."},
+    "source": {"page": "BS EN ISO 14731:2019", "url": "https://www.iso.org/standard/68893.html", "section": "Annex B.1 and B.2"},
+    "standards": ["BS EN ISO 14731:2019, Annex B.1 and B.2"],
+    "scope": {"zh": "Annex B是任务分配指南，应按制造商实际活动选择适用项目。", "en": "Annex B guides task allocation; applicable items are selected for the manufacturer's actual activities."}
+  },
+  {
+    "id": "iso14731-production-controls",
+    "title": {"zh": "焊接协调在生产准备中应控制哪些事项？", "en": "What should welding coordination control during production preparation?"},
+    "text": {"zh": "生产准备通常包括确认适用的WPS及相关工艺文件、焊接顺序、环境条件、人员能力、设备与温度测量条件和生产试验安排。还应核查工艺评定方法和范围、焊材兼容性及储存、母材焊接性与追溯性，以及分包方能力。", "en": "Production preparation normally includes confirming applicable WPSs and related procedures, welding sequence, environmental conditions, competent personnel, equipment and temperature-measurement arrangements, and production tests. It also includes checking procedure-qualification methods and ranges, consumable compatibility and storage, parent-material weldability and traceability, and subcontractor capability."},
+    "source": {"page": "BS EN ISO 14731:2019", "url": "https://www.iso.org/standard/68893.html", "section": "Annex B.3 to B.11"},
+    "standards": ["BS EN ISO 14731:2019, Annex B.3 to B.11"],
+    "scope": {"zh": "并非每个制造商都需要Annex B中的全部项目，应按产品和质量体系选取。", "en": "Not every Annex B item applies to every manufacturer; selection depends on products and the quality system."}
+  },
+  {
+    "id": "iso14731-inspection-traceability",
+    "title": {"zh": "焊接协调是否只负责焊接前的文件？", "en": "Is welding coordination limited to pre-weld documentation?"},
+    "text": {"zh": "不是。协调任务可覆盖焊前的人员证书、WPS、材料、坡口和组装检查；焊中的电流、电压、速度、预热、道间温度、清理和焊接顺序；焊后的外观、NDT、破坏性试验、尺寸和热处理记录。还应处理不符合、返修复验、设备校准、焊缝及人员追溯和质量记录。", "en": "No. Coordination can cover pre-weld checks of personnel qualifications, WPSs, materials, preparation and fit-up; in-process control of current, voltage, travel speed, preheat, interpass temperature, cleaning and sequence; and post-weld visual, NDT, destructive-test, dimensional and heat-treatment records. It also covers nonconformity, repair reassessment, equipment calibration, traceability and quality records."},
+    "source": {"page": "BS EN ISO 14731:2019", "url": "https://www.iso.org/standard/68893.html", "section": "Annex B.12 to B.20"},
+    "standards": ["BS EN ISO 14731:2019, Annex B.12 to B.20"],
+    "scope": {"zh": "具体由谁执行检查，可由组织分工确定；焊接协调关注任务是否被适当安排和控制。", "en": "Who performs each inspection may be defined organizationally; welding coordination ensures the tasks are appropriately allocated and controlled."}
+  },
+  {
+    "id": "iso14732-scope-and-exclusions",
+    "title": {"zh": "ISO 14732适用于哪些人员？", "en": "Who is covered by ISO 14732?"},
+    "text": {"zh": "ISO 14732适用于金属材料机械化和自动焊的焊接操作人员及调机人员资格。它不适用于既不控制或调整焊接参数、也不参与焊接设备设置的人员。搅拌摩擦焊和搅拌摩擦点焊人员资格由其他专用标准覆盖。", "en": "ISO 14732 covers qualification of welding operators and weld setters for mechanized and automatic welding of metallic materials. It does not apply to personnel who neither control or adjust welding parameters nor participate in setting up the welding equipment. Friction stir welding and friction stir spot welding personnel are covered by separate standards."},
+    "source": {"page": "BS EN ISO 14732:2025", "url": "https://www.iso.org/standard/82980.html", "section": "Clause 1"},
+    "standards": ["BS EN ISO 14732:2025, Clause 1"],
+    "scope": {"zh": "手工焊焊工资格不由本标准覆盖，应查相应的ISO 9606系列等标准。", "en": "Manual welder qualification is outside this document and is addressed by standards such as the relevant ISO 9606 part."}
+  },
+  {
+    "id": "iso14732-roles-and-automation",
+    "title": {"zh": "焊接操作人员、调机人员、机械化焊和自动焊有什么区别？", "en": "How do welding operators, weld setters, mechanized welding and automatic welding differ?"},
+    "text": {"zh": "焊接操作人员负责控制或调整机械化或自动焊的参数；调机人员负责焊接单元的设置。机械化焊在焊接过程中允许操作人员手动调整参数；自动焊在过程中不允许操作人员干预变量。资格范围应根据人员实际承担的角色和设备控制方式确定。", "en": "A welding operator controls or adjusts parameters for mechanized or automatic welding, while a weld setter sets up the welding unit. Mechanized welding permits manual parameter adjustment during welding; automatic welding does not permit operator intervention in the variables during the process. Qualification scope follows the actual role and control mode."},
+    "source": {"page": "BS EN ISO 14732:2025", "url": "https://www.iso.org/standard/82980.html", "section": "Clauses 3.1 to 3.7"},
+    "standards": ["BS EN ISO 14732:2025, Clauses 3.1 to 3.7"],
+    "scope": {"zh": "不能仅依据设备被称为机器人或自动设备就判断人员资格类别。", "en": "The qualification category cannot be determined merely because equipment is marketed as robotic or automatic."}
+  },
+  {
+    "id": "iso14732-wps-functional-knowledge",
+    "title": {"zh": "操作人员资格试验必须依据WPS吗？", "en": "Must operator qualification testing follow a WPS?"},
+    "text": {"zh": "操作人员和调机人员应遵循基于pWPS或WPS的工作指令，并采用与焊接方法相应的工艺规范。所选资格方法还必须补充焊接单元功能知识测试并形成记录；一般焊接技术知识测试属于推荐项目，除非国家或其他适用要求将其规定为必须。", "en": "Operators and setters must follow a work instruction based on a pWPS or WPS using the procedure specification applicable to the process. The chosen qualification method must be supplemented by a documented functional-knowledge test of the welding unit. A general welding-technology knowledge test is recommended unless national or other applicable requirements make it mandatory."},
+    "source": {"page": "BS EN ISO 14732:2025", "url": "https://www.iso.org/standard/82980.html", "section": "Clause 4.1 and Annexes A and B"},
+    "standards": ["BS EN ISO 14732:2025, Clause 4.1 and Annexes A and B"],
+    "scope": {"zh": "功能知识测试与一般焊接技术知识测试不是同一要求。", "en": "The functional-knowledge test and the general welding-technology knowledge test are distinct requirements."}
+  },
+  {
+    "id": "iso14732-procedure-test-qualification",
+    "title": {"zh": "参加工艺评定试验能否同时取得操作人员资格？", "en": "Can participation in a procedure test also qualify the operator or setter?"},
+    "text": {"zh": "在机械化或自动焊工艺按照ISO 15613或标准列出的相应ISO 15614部分完成评定时，实际完成该试验的操作人员或调机人员可同时按ISO 14732取得资格，但仍应签发操作人员或调机人员资格证书。不能只保留WPQR而省略人员证书。", "en": "Where a mechanized or automatic welding procedure is qualified under ISO 15613 or the applicable ISO 15614 part listed by ISO 14732, the operator or setter who performed the test may also become qualified under ISO 14732. A separate operator or setter qualification certificate must still be issued; the WPQR alone is not a substitute for that certificate."},
+    "source": {"page": "BS EN ISO 14732:2025", "url": "https://www.iso.org/standard/82980.html", "section": "Clause 4.1"},
+    "standards": ["BS EN ISO 14732:2025, Clause 4.1"],
+    "scope": {"zh": "只适用于标准列明的机械化或自动焊工艺评定路线，并需满足功能知识等其他要求。", "en": "Applies only to listed mechanized or automatic procedure-qualification routes and remains subject to functional-knowledge and other requirements."}
+  },
+  {
+    "id": "iso14732-fusion-qualification-methods",
+    "title": {"zh": "熔化焊操作人员有哪些资格试验方法？", "en": "What qualification methods are available for fusion-welding operators?"},
+    "text": {"zh": "熔化焊可按四类方法评定：对接或角焊缝可按适用材料的ISO 9606部分试验；管板焊可按ISO 15614-8并采用规定的外观、表面和宏观检验；堆焊可按ISO 15614-7并采用规定检验；也可使用有代表性的预生产或生产试件，并按适用方法确定试验和验收。", "en": "Fusion-welding qualification can use four routes: butt or fillet test pieces under the relevant material part of ISO 9606; tube-to-tube-plate tests under ISO 15614-8 with the specified visual, surface and macro tests; overlay tests under ISO 15614-7 with the specified examinations; or representative pre-production or production test pieces assessed using the applicable route."},
+    "source": {"page": "BS EN ISO 14732:2025", "url": "https://www.iso.org/standard/82980.html", "section": "Clause 4.2"},
+    "standards": ["BS EN ISO 14732:2025, Clause 4.2"],
+    "scope": {"zh": "具体试验和验收必须回到所引用的材料、产品和工艺标准核对。", "en": "Detailed testing and acceptance must be checked against the referenced material, product and procedure standards."}
+  },
+  {
+    "id": "iso14732-mechanized-requalification",
+    "title": {"zh": "机械化焊哪些变化通常需要重新评定？", "en": "Which mechanized-welding changes normally require requalification?"},
+    "text": {"zh": "需要重点检查焊接方法组变化、直接与远程目视控制转换、取消自动跟踪或弧长控制、影响设置或参数输入方式的焊接单元变化、单道改多道、轨道焊由单位置改多位置、取消衬垫或熔化嵌条等变化。标准还对TIG加丝与不加丝、带极与丝极埋弧焊转换设置了例外。", "en": "Key triggers include a change of welding-process group, switching between direct and remote visual control, deleting automatic tracking or arc-length control, changing the welding unit where setup or parameter entry is affected, moving from single-run to multi-run technique, changing orbital welding from a single to multiple positions, or deleting backing or consumable inserts. Specific exceptions also address autogenous versus filler-added TIG and strip versus wire SAW."},
+    "source": {"page": "BS EN ISO 14732:2025", "url": "https://www.iso.org/standard/82980.html", "section": "Clause 5.1"},
+    "standards": ["BS EN ISO 14732:2025, Clause 5.1"],
+    "scope": {"zh": "这是机械化焊人员资格变量，不应替代WPS或工艺评定本身的变量检查。", "en": "These are personnel-qualification variables for mechanized welding and do not replace WPS or procedure-qualification variable checks."}
+  },
+  {
+    "id": "iso14732-automatic-requalification",
+    "title": {"zh": "自动焊操作人员资格的重新评定条件是否与机械化焊相同？", "en": "Are automatic-welding requalification triggers the same as for mechanized welding?"},
+    "text": {"zh": "不完全相同。自动焊主要关注焊接方法组变化、对调机人员适用的单道与多道转换，以及影响设置或参数输入方式的焊接单元变化。机械化焊中的目视控制方式、自动跟踪、弧长控制、衬垫等变量不能不加判断地套用于自动焊。", "en": "Not entirely. Automatic-welding qualification principally addresses changes of welding-process group, single-run versus multi-run changes for weld setters, and welding-unit changes that affect setup or parameter entry. Mechanized-welding variables such as visual-control mode, automatic tracking, arc-length control and backing should not be transferred automatically to automatic welding."},
+    "source": {"page": "BS EN ISO 14732:2025", "url": "https://www.iso.org/standard/82980.html", "section": "Clause 5.2"},
+    "standards": ["BS EN ISO 14732:2025, Clause 5.2"],
+    "scope": {"zh": "应先确认实际过程属于机械化焊还是自动焊，再选择对应变量。", "en": "First determine whether the actual process is mechanized or automatic, then apply the corresponding variables."}
+  },
+  {
+    "id": "iso14732-validity-and-confirmation",
+    "title": {"zh": "操作人员资格证多久确认一次有效性？", "en": "How often must operator qualification validity be confirmed?"},
+    "text": {"zh": "资格从试件焊接之日起生效，前提是要求的试验已完成且结果合格。此后每六个月，应由焊接活动负责人、考试人员或考试机构确认该人员持续在其资格范围内成功工作；未完成确认会使资格失效。证书签发时还应注明采用哪一种延续方式。", "en": "Qualification starts on the test-piece welding date, provided the required tests are completed with acceptable results. Every six months, the person responsible for welding activities, examiner or examining body must confirm that the individual has worked successfully within the qualified range; otherwise the qualification becomes invalid. The chosen revalidation route should be stated when the certificate is issued."},
+    "source": {"page": "BS EN ISO 14732:2025", "url": "https://www.iso.org/standard/82980.html", "section": "Clauses 6.1 and 6.2"},
+    "standards": ["BS EN ISO 14732:2025, Clauses 6.1 and 6.2"],
+    "scope": {"zh": "六个月确认是持续有效条件，不等同于定期重新试验。", "en": "Six-month confirmation is a continuity condition, not the same as periodic retesting."}
+  },
+  {
+    "id": "iso14732-revalidation-options",
+    "title": {"zh": "操作人员资格有哪些延续方式？", "en": "What revalidation routes are available for operator qualification?"},
+    "text": {"zh": "ISO 14732提供三种路线：每六年重新进行资格试验；每三年对最近六个月内完成的两道生产焊缝进行规定的无损或破坏性试验；或者在持续六个月确认的基础上长期有效，但须保持同一制造商、制造商的ISO 3834-2或-3质量要求经过验证，并有符合应用标准的合格生产焊缝记录。", "en": "ISO 14732 provides three routes: a new qualification test every six years; testing two production welds made in the last six months every three years using specified NDT or destructive testing; or continuing validity based on six-month confirmations, provided the person remains with the same qualifying manufacturer, that manufacturer's ISO 3834-2 or ISO 3834-3 quality requirements are verified, and acceptable production-weld quality is documented against application standards."},
+    "source": {"page": "BS EN ISO 14732:2025", "url": "https://www.iso.org/standard/82980.html", "section": "Clause 6.3"},
+    "standards": ["BS EN ISO 14732:2025, Clause 6.3"],
+    "scope": {"zh": "三种路线不可只看年限选择；证书、制造商体系和可用的生产证据必须同时满足对应条件。", "en": "The route cannot be selected on time interval alone; certificate entries, manufacturer systems and production evidence must satisfy the chosen conditions."}
+  },
+  {
+    "id": "iso14732-revocation",
+    "title": {"zh": "什么时候应撤销操作人员资格？", "en": "When should an operator qualification be revoked?"},
+    "text": {"zh": "如果有具体理由质疑操作人员或调机人员能否按产品标准制造合格焊缝，应撤销支持其当前焊接工作的相关资格。未受到质疑的其他资格可以继续保留，因此撤销应针对有证据关联的资格范围，而不是自动取消该人员所有证书。", "en": "Where there is a specific reason to question an operator's or setter's ability to produce welds meeting product-standard quality requirements, the qualifications supporting the welding in question should be revoked. Other qualifications not under question may remain valid, so revocation should be tied to the affected qualified scope rather than automatically cancelling every certificate."},
+    "source": {"page": "BS EN ISO 14732:2025", "url": "https://www.iso.org/standard/82980.html", "section": "Clause 6.4"},
+    "standards": ["BS EN ISO 14732:2025, Clause 6.4"],
+    "scope": {"zh": "具体调查、停工和恢复安排还应符合产品标准、质量体系和合同程序。", "en": "Investigation, suspension and reinstatement also need to follow product standards, the quality system and contractual procedures."}
+  },
+  {
+    "id": "iso14732-certificate-records",
+    "title": {"zh": "操作人员资格证和记录应包含什么？", "en": "What should operator qualification certificates and records contain?"},
+    "text": {"zh": "合格后，考试人员或考试机构应确认结果并负责签发证书。证书应记录采用的pWPS或WPS、试验变量、资格范围、功能知识测试及适用的延续方式；任何超出允许范围的关键变量变化都需要新试验和新证书。证书、试验报告以及延续记录应归档保存。", "en": "After acceptable testing, the examiner or examining body confirms the result and is responsible for issuing the certificate. The certificate records the pWPS or WPS, test variables, qualified range, functional-knowledge test and selected revalidation route. A change of essential variables beyond permitted ranges requires a new test and certificate. Certificates, test reports and revalidation records must be retained."},
+    "source": {"page": "BS EN ISO 14732:2025", "url": "https://www.iso.org/standard/82980.html", "section": "Clauses 7 and 8"},
+    "standards": ["BS EN ISO 14732:2025, Clauses 7 and 8"],
+    "scope": {"zh": "证书格式可参考标准示例，但最终还需满足考试机构、应用标准和合同要求。", "en": "The standard's example can guide certificate format, but examining-body, application-standard and contractual requirements still apply."}
   }
 ]

@@ -28,7 +28,8 @@ export const buildMessages = (query, matches) => {
     `[${index + 1}] ${match.title.zh} / ${match.title.en}`,
     match.text.zh,
     match.text.en,
-    `Scope: ${match.scope.zh} / ${match.scope.en}`
+    `Scope: ${match.scope.zh} / ${match.scope.en}`,
+    `Source: ${match.source.page}, ${match.source.section}`
   ].join("\n")).join("\n\n");
   return [
     {
