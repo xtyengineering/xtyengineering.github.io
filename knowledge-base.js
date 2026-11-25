@@ -149,25 +149,29 @@
     </article>`;
   };
 
-  const renderAI = matches => {
+  const renderAI = data => {
     const zh = isZh();
+    const matches = data.matches || [];
     const [match, ...related] = matches;
-    if (!match) return renderLocal(input.value);
+    if (!data.covered || !match) {
+      result.innerHTML = `<div class="kb-empty"><h2>${zh ? "知识库暂未覆盖这个问题" : "This question is not covered yet"}</h2><p>${zh ? "AI 没有找到足够相关的证据，因此不会猜测答案。" : "The AI did not find sufficiently relevant evidence, so it will not guess."}</p></div>`;
+      return;
+    }
     const language = zh ? "zh" : "en";
     result.innerHTML = `<article class="kb-answer">
-      <div class="kb-answer-label">${zh ? "AI 向量检索·最相关知识块" : "AI vector search · top knowledge chunk"}</div>
-      <h2>${escapeHtml(match.title[language])}</h2>
-      <p class="kb-answer-main">${escapeHtml(match.text[language])}</p>
+      <div class="kb-answer-label">${zh ? "RAG 生成回答·仅依据检索证据" : "RAG answer · grounded only in retrieved evidence"}</div>
+      <h2>${zh ? "基于知识库的回答" : "Knowledge-base answer"}</h2>
+      <p class="kb-answer-main">${escapeHtml(data.answer)}</p>
       <p class="kb-scope"><strong>${zh ? "适用边界：" : "Scope: "}</strong>${escapeHtml(match.scope[language])}</p>
-      <div class="kb-sources"><strong>${zh ? `语义相似度：${match.score}` : `Semantic similarity: ${match.score}`}</strong><a href="${match.source.url}">${escapeHtml(match.source.section)} <span>↗</span></a></div>
-      ${related.length ? `<div class="kb-related"><strong>${zh ? "其他相关结果" : "Other related results"}</strong>${related.map(item => `<a href="${item.source.url}">${escapeHtml(item.title[language])} <span>${item.score}</span></a>`).join("")}</div>` : ""}
+      <div class="kb-sources"><strong>${zh ? "检索证据" : "Retrieved evidence"}</strong>${matches.map((item, index) => `<a href="${item.source.url}">[${index + 1}] ${escapeHtml(item.title[language])} <span>${item.score}</span></a>`).join("")}</div>
+      ${related.length ? `<div class="kb-related"><strong>${zh ? "最相关知识块" : "Top knowledge chunk"}</strong><span>${escapeHtml(match.text[language])}</span></div>` : ""}
     </article>`;
   };
 
   const render = async query => {
     const zh = isZh();
     submit.disabled = true;
-    result.innerHTML = `<div class="kb-empty"><h2>${zh ? "AI 正在理解问题…" : "AI is interpreting the question…"}</h2></div>`;
+    result.innerHTML = `<div class="kb-empty"><h2>${zh ? "AI 正在检索证据并生成回答…" : "AI is retrieving evidence and generating an answer…"}</h2></div>`;
     try {
       const response = await fetch(endpoint, {
         method: "POST",
@@ -175,7 +179,7 @@
         body: JSON.stringify({ query })
       });
       if (!response.ok) throw new Error(`Search failed: ${response.status}`);
-      renderAI((await response.json()).matches || []);
+      renderAI(await response.json());
     } catch (error) {
       console.warn(error);
       renderLocal(query);

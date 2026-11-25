@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Welding AI Knowledge Base · XIAO Tingyu</title>
-  <meta name="description" content="A small, evidence-linked welding knowledge base covering heat input, WPS/WPQR, S960, Hong Kong inspection and hardness testing.">
+  <meta name="description" content="A small, evidence-linked welding RAG demo covering heat input, WPS/WPQR and Hong Kong weld inspection.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="favicon.svg?v=20260929-4" type="image/svg+xml">
   <link rel="stylesheet" href="dark.css?v=20260929-14">
@@ -21,7 +21,7 @@
   <script>document.documentElement.classList.add("i18n-loading")</script>
   <script src="blog-nav.js?v=20260929-2" defer></script>
   <script src="i18n.js?v=20261124-2" defer></script>
-  <script src="knowledge-base.js?v=20261125-1" defer></script>
+  <script src="knowledge-base.js?v=20261125-2" defer></script>
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
@@ -29,9 +29,9 @@
 
   <main id="main" class="wrap kb-page">
     <section class="kb-hero">
-      <div class="eyebrow">AI VECTOR RETRIEVAL · EVIDENCE-LINKED</div>
+      <div class="eyebrow">RAG · RETRIEVE · GROUND · GENERATE</div>
       <h1><span data-l="en">Welding AI Knowledge Base</span><span data-l="zh">焊接AI知识库</span></h1>
-      <p><span data-l="en">Ask a welding question. This small prototype retrieves the closest reviewed knowledge card and returns a concise answer with its scope and sources.</span><span data-l="zh">输入一个焊接问题。这个小型体验版会检索最相关的已核对知识卡，并返回简明答案、适用边界和来源。</span></p>
+      <p><span data-l="en">Ask a welding question. The demo retrieves reviewed evidence, then uses a language model to produce a concise answer grounded in that evidence.</span><span data-l="zh">输入一个焊接问题。系统先检索已核对证据，再让大语言模型只根据这些证据生成答案。</span></p>
       <div class="kb-cost"><span><span data-l="en">Current cost: HK$0</span><span data-l="zh">当前成本：HK$0</span></span><span><span data-l="en">No browser API key</span><span data-l="zh">浏览器无需API密钥</span></span><span><span data-l="en">Cloudflare Workers AI</span><span data-l="zh">Cloudflare Workers AI</span></span></div>
     </section>
 
@@ -39,7 +39,7 @@
       <form id="kb-form">
         <label id="kb-label" for="kb-query"><span data-l="en">What would you like to check?</span><span data-l="zh">你想查询什么？</span></label>
         <textarea id="kb-query" required minlength="2"></textarea>
-        <div class="kb-actions"><button class="kb-submit" type="submit"><span data-l="en">AI semantic search</span><span data-l="zh">AI语义检索</span></button><span class="kb-privacy"><span data-l="en">The question is sent to Cloudflare Workers AI for vectorisation.</span><span data-l="zh">问题会发送到 Cloudflare Workers AI 进行向量化。</span></span></div>
+        <div class="kb-actions"><button class="kb-submit" type="submit"><span data-l="en">Generate grounded answer</span><span data-l="zh">生成有依据的回答</span></button><span class="kb-privacy"><span data-l="en">Cloudflare Workers AI performs vector search and grounded generation.</span><span data-l="zh">Cloudflare Workers AI 负责向量检索和依据生成。</span></span></div>
       </form>
       <div class="kb-examples" aria-label="Example questions">
         <button class="kb-example" type="button" data-query-zh="热输入和电弧能量有什么区别？" data-query-en="What is the difference between heat input and arc energy?"><span data-l="en">Heat input vs arc energy</span><span data-l="zh">热输入与电弧能量</span></button>
@@ -49,11 +49,11 @@
     </section>
 
     <section id="kb-result" aria-live="polite">
-      <div class="kb-empty"><h2><span data-l="en">Try one of the example questions</span><span data-l="zh">点击一个示例问题开始</span></h2><p><span data-l="en">The first version deliberately covers only five reviewed topics.</span><span data-l="zh">第一版有意只覆盖5个经过核对的主题。</span></p></div>
+      <div class="kb-empty"><h2><span data-l="en">Try one of the example questions</span><span data-l="zh">点击一个示例问题开始</span></h2><p><span data-l="en">This minimal RAG demo deliberately covers only three reviewed themes.</span><span data-l="zh">这个最小 RAG 演示有意只覆盖3个经过核对的主题。</span></p></div>
     </section>
 
     <div class="kb-about">
-      <section><h2><span data-l="en">How it works</span><span data-l="zh">运行方式</span></h2><ol><li><span data-l="en">BGE-M3 converts the question and reviewed chunks into vectors.</span><span data-l="zh">BGE-M3 把问题和已核对知识块转换为向量。</span></li><li><span data-l="en">Cosine similarity ranks meaning rather than exact keywords.</span><span data-l="zh">余弦相似度按语义而非原样关键词排序。</span></li><li><span data-l="en">The page returns the best evidence, scope and source.</span><span data-l="zh">页面返回最相关证据、边界和来源。</span></li></ol></section>
+      <section><h2><span data-l="en">How it works</span><span data-l="zh">运行方式</span></h2><ol><li><span data-l="en">BGE-M3 converts the question and reviewed chunks into vectors.</span><span data-l="zh">BGE-M3 把问题和已核对知识块转换为向量。</span></li><li><span data-l="en">Cosine similarity retrieves the three closest evidence chunks.</span><span data-l="zh">余弦相似度取回最相关的3条证据。</span></li><li><span data-l="en">Gemma 4 answers only from that evidence and cites it.</span><span data-l="zh">Gemma 4 只根据这些证据生成回答并标注引用。</span></li></ol></section>
       <section><h2><span data-l="en">What it does not do</span><span data-l="zh">它不会做什么</span></h2><p><span data-l="en">This is a retrieval prototype, not an approval system. It does not approve a WPS, select project parameters or replace the governing standard and Responsible Engineer.</span><span data-l="zh">这是检索体验版，不是审批系统。它不能批准WPS、替项目选择参数，也不能替代适用标准和负责工程师。</span></p></section>
       <section class="kb-topics"><h2><span data-l="en">Current vector knowledge scope</span><span data-l="zh">当前向量知识范围</span></h2><div class="kb-topic-list"><span>Heat input / 热输入</span><span>WPS &amp; WPQR</span><span>Hong Kong NDT / 香港检测</span></div></section>
     </div>
