@@ -129,7 +129,7 @@
   const submit = form.querySelector("button[type=submit]");
   const endpoint = "https://xty-welding-rag.xiaoty89757.workers.dev/search";
   const isZh = () => document.documentElement.lang.startsWith("zh");
-  const escapeHtml = value => value.replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
+  const formatAnswer = value => escapeHtml(value)    .replace(/\\frac\{([^{}]+)\}\{([^{}]+)\}/g, "($1) / ($2)")    .replace(/\text\{([^{}]+)\}/g, "$1")    .replace(/\times/g, "×")    .replace(/\\eta/g, "η")    .replace(/\$/g, "")    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")    .replace(/^\s*\*\s+/gm, "• ");  const cleanAnswer = value => formatAnswer(value).replace(new RegExp(String.fromCharCode(92, 92) + "text[{]([^{}]+)[}]", "g"), "$1").replace(new RegExp(String.fromCharCode(92, 92) + "times", "g"), "×");  const escapeHtml = value => value.replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
 
   const renderLocal = query => {
     const topic = retrieve(query);
@@ -161,7 +161,7 @@
     result.innerHTML = `<article class="kb-answer">
       <div class="kb-answer-label">${zh ? "RAG 生成回答·仅依据检索证据" : "RAG answer · grounded only in retrieved evidence"}</div>
       <h2>${zh ? "基于知识库的回答" : "Knowledge-base answer"}</h2>
-      <p class="kb-answer-main">${escapeHtml(data.answer)}</p>
+      <p class="kb-answer-main">${cleanAnswer(data.answer)}</p>
       <p class="kb-scope"><strong>${zh ? "适用边界：" : "Scope: "}</strong>${escapeHtml(match.scope[language])}</p>
       <div class="kb-sources"><strong>${zh ? "检索证据" : "Retrieved evidence"}</strong>${matches.map((item, index) => `<a href="${item.source.url}">[${index + 1}] ${escapeHtml(item.title[language])} <span>${item.score}</span></a>`).join("")}</div>
       ${related.length ? `<div class="kb-related"><strong>${zh ? "最相关知识块" : "Top knowledge chunk"}</strong><span>${escapeHtml(match.text[language])}</span></div>` : ""}
