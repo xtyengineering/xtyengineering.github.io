@@ -1,5 +1,3 @@
-const corpus = [{"id":"heat-input-formula","title":{"zh":"电弧能量的公式与单位","en":"Arc-energy equation and units"},"text":{"zh":"电弧能量是由电弧电参数计算的单位焊缝长度能量。当电压 U 以 V、电流 I 以 A、焊接速度 v 以 mm/min 表示时，Arc energy = 60 × U × I / (1000 × v) kJ/mm。若 v 以 mm/s 表示，公式中不使用系数 60。计算结果应注明速度单位以及是否计入效率系数 η。","en":"Arc energy is the energy per unit weld length calculated from the electrical arc parameters. When voltage U is in V, current I is in A and travel speed v is in mm/min, Arc energy = 60 × U × I / (1000 × v) kJ/mm. When v is in mm/s, the factor 60 is omitted. Every result should state the travel-speed unit and whether the efficiency factor η has been applied."},"source":{"page":"heat-input.html","url":"https://xtyengineering.github.io/heat-input.html","section":"计算式与单位 / Equations and units"},"standards":["BS EN 1011-1:2009"],"scope":{"zh":"项目应采用合同指定的计算定义和单位。","en":"Use the calculation definition and units specified by the contract."}},{"id":"heat-input-efficiency","title":{"zh":"效率系数与跨规范命名","en":"Efficiency factor and cross-code terminology"},"text":{"zh":"当适用定义要求计入焊接方法的热效率系数 η 时，Heat input = η × Arc energy。在常规 WPS/WPQR 计算中，η 通常是适用标准给出的约定值，不是焊机电源效率。EN 体系常区分电弧能量和计入 η 后的热输入；AWS 文件常把未乘 η 的结果称为 heat input。没有合同依据时，不应自行再乘 0.8。","en":"Where the adopted definition requires the process thermal-efficiency factor η, Heat input = η × Arc energy. In routine WPS/WPQR calculations, η is normally a conventional value specified by the applicable standard, not power-source efficiency. EN practice commonly distinguishes arc energy from heat input after η is applied, while AWS documents commonly call the value before η is applied heat input. Do not multiply by 0.8 again without a contractual basis."},"source":{"page":"heat-input.html","url":"https://xtyengineering.github.io/heat-input.html","section":"效率系数 η / Efficiency factor η"},"standards":["BS EN 1011-1:2009","ISO/TS 8182:2026"],"scope":{"zh":"先确认合同采用的规范体系；特殊工艺应采用获批的计算边界。","en":"Identify the contract code system first; special processes require an approved calculation boundary."}},{"id":"wps-document-roles","title":{"zh":"pWPS、WPQR/PQR 与 WPS 的作用","en":"Roles of pWPS, WPQR/PQR and WPS"},"text":{"zh":"ISO 工艺评定试验路线为：pWPS → 工艺评定试件焊接 → 检验与试验 → WPQR → 生产用 WPS。pWPS 用于指导评定试件施焊；WPQR/PQR 记录实际试验条件、检验和试验结果及评定范围；WPS 是受控的生产焊接工艺指令。","en":"Under the ISO procedure-test route, the sequence is pWPS → qualification test weld → examination and testing → WPQR → production WPS. The pWPS instructs production of the qualification test weld; the WPQR/PQR records the actual test conditions, examination and test results, and qualification range; the WPS is the controlled instruction for production welding."},"source":{"page":"wps-pqr.html","url":"https://xtyengineering.github.io/wps-pqr.html","section":"Function of each document"},"standards":["ISO 15609-1:2019","ISO 15614-1:2017+A1:2019"],"scope":{"zh":"ISO 与 AWS 的术语和评定路线不能自动互换。","en":"ISO and AWS terminology and qualification routes are not automatically interchangeable."}},{"id":"wpqr-actual-values","title":{"zh":"评定记录的实际值与 WPS 的允许范围","en":"Actual qualification values and permitted WPS ranges"},"text":{"zh":"评定记录必须注明试件焊接时实际采用的数值。如实测电流为 245 A，仅记录 200–300 A 的设备宽泛范围不能描述该试验。只有在适用评定规则支持且技术上适合生产接头时，生产用 WPS 才能规定相应范围。","en":"A qualification record must state the values actually used for the test weld. If the measured current was 245 A, a broad machine range such as 200–300 A does not describe the test. A production WPS can contain a range only where that range is supported by the governing qualification rules and remains technically suitable for the production joint."},"source":{"page":"wps-pqr.html","url":"https://xtyengineering.github.io/wps-pqr.html","section":"Actual values and permitted ranges"},"standards":["ISO 15614-1:2017+A1:2019"],"scope":{"zh":"允许范围必须按合同指定的规范版本确定。","en":"Derive permitted ranges from the code edition specified by the contract."}},{"id":"wps-production-coverage","title":{"zh":"WPQR/PQR 对生产 WPS 的覆盖性核查","en":"Checking WPQR/PQR coverage of a production WPS"},"text":{"zh":"仅有已签署的 WPQR/PQR 并不足够。应逐项核对生产 WPS 是否处于已评定的母材组别、产品形式、厚度、熔敷焊缝金属厚度、适用时的管径、接头形式、焊接方法、焊接位置、衬垫、焊材、热输入或电弧能量、预热、道间温度及焊后热处理范围内。","en":"A signed WPQR/PQR is not sufficient by itself. Check the production WPS against the qualified parent-material grouping, product form, thickness, deposited weld-metal thickness, pipe diameter where relevant, joint type, welding process, position, backing, consumables, heat-input or arc-energy controls, preheat, interpass temperature and post-weld heat treatment."},"source":{"page":"wps-pqr.html","url":"https://xtyengineering.github.io/wps-pqr.html","section":"Applicability to the production weld"},"standards":["ISO 15614-1:2017+A1:2019"],"scope":{"zh":"规范评定范围内仍需评估实际接头的工程适用性。","en":"Being inside the formal qualification range does not remove the need to assess engineering suitability."}},{"id":"hk-visual-inspection","title":{"zh":"香港《钢结构规范》的焊缝目视检验","en":"Visual weld inspection under the Hong Kong Steel Code"},"text":{"zh":"《钢结构规范》第 14.3.6.3 条要求在其他规定无损检测前，对所有焊缝全长进行目视检验。将变得不可接近的焊缝应在失去可达性前完成检验。目视检验检查尺寸、外形和可见表面缺欠，并确认表面是否适合后续检测。","en":"Clause 14.3.6.3 requires visual inspection over the full length of all welds before other required NDT. Welds that will become inaccessible are to be examined before access is lost. Visual inspection addresses dimensions, profile and visible surface imperfections and establishes whether the surface is suitable for supplementary testing."},"source":{"page":"hong-kong-weld-inspection.html","url":"https://xtyengineering.github.io/hong-kong-weld-inspection.html","section":"Visual inspection"},"standards":["Hong Kong Steel Code 2011 (2023 Edition), 14.3.6.3"],"scope":{"zh":"应同时确认项目图纸、技术规范和 ITP 的补充要求。","en":"Also confirm supplementary requirements in the project drawings, specification and ITP."}},{"id":"hk-ndt-hold-time","title":{"zh":"香港钢结构最终无损检测前的等待时间","en":"Hold time before final NDT under the Hong Kong Steel Code"},"text":{"zh":"第 14.3.6.4 条规定，焊态构件最终检验前通常应至少等待 16 小时，表 14.2b 再根据 IIW 碳当量和组合厚度给出示例等待时间。对屈服强度高于 690 MPa 的材料，不应使用表 14.2b；负责工程师应根据焊接工程师或焊材供应商的意见提交等待时间。因此，不能把规范概括为统一等待 24 或 48 小时。","en":"Clause 14.3.6.4 states that at least 16 hours should generally be allowed before final inspection of as-welded fabrication, with Table 14.2b varying illustrative hold time by IIW carbon equivalent and combined thickness. For material above 690 MPa yield strength, Table 14.2b should not be used; the Responsible Engineer should submit the hold time based on advice from a welding engineer or consumable supplier. A universal 24- or 48-hour rule is therefore inaccurate."},"source":{"page":"hong-kong-weld-inspection.html","url":"https://xtyengineering.github.io/hong-kong-weld-inspection.html","section":"Hold time before final NDT"},"standards":["Hong Kong Steel Code 2011 (2023 Edition), 14.3.6.4 and Table 14.2b"],"scope":{"zh":"等待时间应由适用规范、材料、厚度、拘束和项目 ITP 确定并记录。","en":"Determine and record hold time from the applicable code, material, thickness, restraint and project ITP."}},{"id":"hk-high-strength-ndt","title":{"zh":"香港规范下高强钢焊缝的无损检测频率","en":"NDT frequency for high-strength steel under the Hong Kong Steel Code"},"text":{"zh":"表 14.3a 按焊缝形式、方向和厚度规定强制无损检测。注 5 规定，对屈服强度大于 500 N/mm² 的钢材，除非负责工程师另行同意，检测频率应为 100%。任何降低检测比例的决定都应形成项目记录，并由适用条款和生产证据支持。","en":"Table 14.3a defines mandatory NDT by weld type, orientation and thickness. Note 5 states that, for steel with yield strength greater than 500 N/mm², the testing frequency should be 100% unless otherwise agreed by the Responsible Engineer. Any reduction should be a documented project decision supported by the applicable provision and production evidence."},"source":{"page":"hong-kong-weld-inspection.html","url":"https://xtyengineering.github.io/hong-kong-weld-inspection.html","section":"NDT extent for high-strength steel"},"standards":["Hong Kong Steel Code 2011 (2023 Edition), Table 14.3a Note 5"],"scope":{"zh":"具体检测方法、范围和验收准则仍应按合同和项目 ITP 确定。","en":"The contract and project ITP still define the method, extent and acceptance criteria."}}];
-
 const embeddingModel = "@cf/baai/bge-m3";
 const generationModel = "@cf/google/gemma-4-26b-a4b-it";
 const minimumScore = 0.55;
@@ -14,22 +12,13 @@ const embeddingText = chunk => [
   chunk.scope.en
 ].join("\n");
 
-export const cosineSimilarity = (left, right) => {
-  if (!left.length || left.length !== right.length) throw new Error("Embedding dimensions do not match");
-  let dot = 0;
-  let leftMagnitude = 0;
-  let rightMagnitude = 0;
-  for (let index = 0; index < left.length; index += 1) {
-    dot += left[index] * right[index];
-    leftMagnitude += left[index] ** 2;
-    rightMagnitude += right[index] ** 2;
-  }
-  return dot / Math.sqrt(leftMagnitude * rightMagnitude);
-};
-
-export const rankVectors = (queryVector, vectors) => vectors
-  .map((vector, index) => ({ index, score: cosineSimilarity(queryVector, vector) }))
-  .sort((left, right) => right.score - left.score);
+const rowToChunk = row => ({
+  id: row.id,
+  title: { zh: row.title_zh, en: row.title_en },
+  text: { zh: row.text_zh, en: row.text_en },
+  scope: { zh: row.scope_zh, en: row.scope_en },
+  source: { page: row.source_page, url: row.source_url, section: row.source_section }
+});
 
 export const isCovered = matches => Boolean(matches[0] && matches[0].score >= minimumScore);
 
@@ -44,7 +33,7 @@ export const buildMessages = (query, matches) => {
   return [
     {
       role: "system",
-      content: `You are a cautious welding knowledge-base assistant. Answer in ${language}. Use only the supplied evidence. Cite claims with [1], [2] or [3]. Do not invent requirements, parameters, standards or approvals. Keep the answer concise.`
+      content: `You are a cautious welding knowledge-base assistant. Answer in ${language}. Use only the supplied evidence. Cite claims with [1], [2] or [3]. Do not invent requirements, parameters, standards or approvals. Keep the answer concise. Return plain text only: no Markdown, LaTeX, dollar-delimited math or backslash commands. Write formulas with Unicode symbols and /, for example: Arc energy = 60 × U × I / (1000 × v) kJ/mm.`
     },
     { role: "user", content: `Question:\n${query}\n\nEvidence:\n${evidence}` }
   ];
@@ -52,7 +41,7 @@ export const buildMessages = (query, matches) => {
 
 const headers = origin => ({
   "Access-Control-Allow-Origin": origin === allowedOrigin ? origin : allowedOrigin,
-  "Access-Control-Allow-Headers": "Content-Type",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization",
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
   "Content-Type": "application/json; charset=utf-8",
   "Vary": "Origin"
@@ -63,6 +52,27 @@ const json = (body, status = 200, origin = allowedOrigin) => new Response(JSON.s
   headers: headers(origin)
 });
 
+const getChunksByIds = async (db, ids) => {
+  if (!ids.length) return [];
+  const placeholders = ids.map(() => "?").join(",");
+  const { results } = await db.prepare(`SELECT * FROM chunks WHERE is_public = 1 AND id IN (${placeholders})`)
+    .bind(...ids)
+    .all();
+  const byId = new Map(results.map(row => [row.id, rowToChunk(row)]));
+  return ids.map(id => byId.get(id)).filter(Boolean);
+};
+
+const reindex = async env => {
+  const { results } = await env.DB.prepare("SELECT * FROM chunks WHERE is_public = 1 ORDER BY id").all();
+  const chunks = results.map(rowToChunk);
+  const embeddings = await env.AI.run(embeddingModel, { text: chunks.map(embeddingText) });
+  if (!Array.isArray(embeddings.data) || embeddings.data.length !== chunks.length) {
+    throw new Error("Unexpected embedding response");
+  }
+  await env.VECTOR_INDEX.upsert(chunks.map((chunk, index) => ({ id: chunk.id, values: embeddings.data[index] })));
+  return chunks.length;
+};
+
 export default {
   async fetch(request, env) {
     const origin = request.headers.get("Origin") || allowedOrigin;
@@ -71,8 +81,18 @@ export default {
 
     const url = new URL(request.url);
     if (request.method === "GET" && url.pathname === "/health") {
-      return json({ ok: true, embeddingModel, generationModel, chunks: corpus.length }, 200, origin);
+      const row = await env.DB.prepare("SELECT COUNT(*) AS count FROM chunks WHERE is_public = 1").first();
+      return json({ ok: true, dataBackend: "Cloudflare Vectorize + D1", embeddingModel, generationModel, chunks: row?.count || 0 }, 200, origin);
     }
+
+    if (request.method === "POST" && url.pathname === "/admin/reindex") {
+      if (!env.ADMIN_TOKEN || request.headers.get("Authorization") !== `Bearer ${env.ADMIN_TOKEN}`) {
+        return json({ error: "Unauthorized" }, 401, origin);
+      }
+      const indexed = await reindex(env);
+      return json({ ok: true, indexed, embeddingModel }, 200, origin);
+    }
+
     if (request.method !== "POST" || url.pathname !== "/search") {
       return json({ error: "Use POST /search" }, 404, origin);
     }
@@ -82,29 +102,20 @@ export default {
       return json({ error: "Query must contain 2 to 300 characters" }, 400, origin);
     }
 
-    // ponytail: re-embed 8 documents per query; cache vectors when the corpus grows.
-    const embeddings = await env.AI.run(embeddingModel, {
-      text: [query.trim(), ...corpus.map(embeddingText)]
-    });
-    if (!Array.isArray(embeddings.data) || embeddings.data.length !== corpus.length + 1) {
-      throw new Error("Unexpected embedding response");
-    }
+    const embeddings = await env.AI.run(embeddingModel, { text: [query.trim()] });
+    const queryVector = embeddings.data?.[0];
+    if (!Array.isArray(queryVector)) throw new Error("Unexpected embedding response");
 
-    const [queryVector, ...documentVectors] = embeddings.data;
-    const matches = rankVectors(queryVector, documentVectors).slice(0, 3).map(({ index, score }) => ({
-      id: corpus[index].id,
-      score: Number(score.toFixed(4)),
-      title: corpus[index].title,
-      text: corpus[index].text,
-      scope: corpus[index].scope,
-      source: corpus[index].source
-    }));
+    const vectorResult = await env.VECTOR_INDEX.query(queryVector, { topK: 3 });
+    const vectorMatches = vectorResult.matches || [];
+    const chunks = await getChunksByIds(env.DB, vectorMatches.map(match => match.id));
+    const scores = new Map(vectorMatches.map(match => [match.id, Number(match.score.toFixed(4))]));
+    const matches = chunks.map(chunk => ({ ...chunk, score: scores.get(chunk.id) || 0 }));
 
     if (!isCovered(matches)) {
-      return json({ embeddingModel, generationModel, covered: false, generated: false, answer: null, matches }, 200, origin);
+      return json({ dataBackend: "Cloudflare Vectorize + D1", embeddingModel, generationModel, covered: false, generated: false, answer: null, matches }, 200, origin);
     }
 
-    // ponytail: one grounded generation call; add streaming only when latency becomes a real problem.
     const completion = await env.AI.run(generationModel, {
       messages: buildMessages(query.trim(), matches),
       max_completion_tokens: 240,
@@ -114,13 +125,6 @@ export default {
     const answer = completion.response || completion.choices?.[0]?.message?.content;
     if (typeof answer !== "string" || !answer.trim()) throw new Error("Unexpected generation response");
 
-    return json({
-      embeddingModel,
-      generationModel,
-      covered: true,
-      generated: true,
-      answer: answer.trim(),
-      matches
-    }, 200, origin);
+    return json({ dataBackend: "Cloudflare Vectorize + D1", embeddingModel, generationModel, covered: true, generated: true, answer: answer.trim(), matches }, 200, origin);
   }
 };

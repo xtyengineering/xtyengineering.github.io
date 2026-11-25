@@ -4,5 +4,18 @@
   "compatibility_date": "2026-11-24",
   "ai": {
     "binding": "AI"
-  }
+  },
+  "vectorize": [
+    {
+      "binding": "VECTOR_INDEX",
+      "index_name": "xty-welding-knowledge"
+    }
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "xty-welding-knowledge",
+      "database_id": "7f432a87-3505-408f-9cfa-2b27f3a64aec"
+    }
+  ]
 }
